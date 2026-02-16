@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSyllabus } from '../hooks/useSyllabus';
 import { CheckCircle2, Circle, ChevronDown, ChevronRight, BookOpen } from 'lucide-react';
 import { useState } from 'react';

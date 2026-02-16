@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { generateSchedule } from '../utils/scheduleGenerator';
 import { Calendar, Clock } from 'lucide-react';
 
@@ -24,7 +24,7 @@ const Schedule = () => {
             </div>
 
             <div className="relative border-l-2 border-indigo-200 ml-3 md:ml-6 space-y-8 py-4">
-                {schedule.map((week, index) => (
+                {schedule.map((week) => (
                     <div key={week.weekNumber} className="relative pl-8 md:pl-12">
                         {/* Timeline connector dot */}
                         <div className="absolute left-[-5px] top-6 w-3 h-3 rounded-full bg-indigo-600 border-4 border-white shadow-sm ring-1 ring-indigo-200" />

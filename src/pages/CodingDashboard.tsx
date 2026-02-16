@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { useTracker } from '../hooks/useTracker';
 import { useNavigate } from 'react-router-dom';
 import {
