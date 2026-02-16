@@ -92,6 +92,46 @@ const Tracker = () => {
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-8">
+                    {/* Aptitude Section - First Priority */}
+                    <div className="bg-amber-50 p-6 rounded-xl border border-amber-200">
+                        <h3 className="font-semibold text-amber-700 mb-4 flex items-center gap-2 text-lg">
+                            <Zap size={20} className="text-amber-600" />
+                            <span>Aptitude Practice</span>
+                        </h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="space-y-2">
+                                <label className="block text-sm font-medium text-slate-700">Aptitude Duration (Target: 1h)</label>
+                                <div className="flex items-center gap-4">
+                                    <input
+                                        type="number"
+                                        min="0"
+                                        step="0.5"
+                                        value={revisionHours}
+                                        onChange={e => setRevisionHours(Number(e.target.value))}
+                                        className="w-24 px-3 py-2 rounded-lg border-2 border-amber-200 focus:ring-2 focus:ring-amber-500 outline-none"
+                                    />
+                                    {revisionHours >= 1 && (
+                                        <div className="flex items-center gap-2 bg-emerald-500 text-white px-4 py-1.5 rounded-full text-sm font-black shadow-md animate-bounce">
+                                            <Zap size={16} /> Aptitude Target Met! 🎯
+                                        </div>
+                                    )}
+                                </div>
+                                <p className="text-xs text-amber-600 font-medium">Practice quantitative aptitude, logical reasoning & verbal ability.</p>
+                            </div>
+
+                            <div className="space-y-2">
+                                <label className="block text-sm font-medium text-slate-700">Topics Covered</label>
+                                <textarea
+                                    value={notes}
+                                    onChange={(e) => setNotes(e.target.value)}
+                                    rows={1}
+                                    placeholder="e.g., Number Systems, Data Interpretation..."
+                                    className="w-full px-4 py-2 rounded-lg border border-amber-200 focus:ring-2 focus:ring-amber-500 outline-none transition-all"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
                     {/* GATE Preparation Tracking Section */}
                     <div className="bg-sky-50 p-6 rounded-xl border border-sky-100">
                         <h3 className="font-semibold text-sky-700 mb-4 flex items-center gap-2 text-lg">
@@ -135,9 +175,9 @@ const Tracker = () => {
                     {/* Time Allocation Section (Remaining) */}
                     <div className="bg-slate-50 p-6 rounded-xl border border-slate-100">
                         <h3 className="font-semibold text-slate-700 mb-4 flex items-center gap-2">
-                            <Clock size={18} /> Daily Routine Breakdown
+                            <Clock size={18} /> Additional Study Time
                         </h3>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="space-y-2">
                                 <label className="block text-sm font-medium text-slate-600">Coding (1h)</label>
                                 <input type="number" min="0" step="0.5" value={codingHours} onChange={e => setCodingHours(Number(e.target.value))} className="w-full px-3 py-2 rounded border focus:ring-2 focus:ring-indigo-500" />
@@ -145,10 +185,6 @@ const Tracker = () => {
                             <div className="space-y-2">
                                 <label className="block text-sm font-medium text-slate-600">DSA Concept (1h)</label>
                                 <input type="number" min="0" step="0.5" value={dsaHours} onChange={e => setDsaHours(Number(e.target.value))} className="w-full px-3 py-2 rounded border focus:ring-2 focus:ring-indigo-500" />
-                            </div>
-                            <div className="space-y-2">
-                                <label className="block text-sm font-medium text-slate-600">Revision (1h)</label>
-                                <input type="number" min="0" step="0.5" value={revisionHours} onChange={e => setRevisionHours(Number(e.target.value))} className="w-full px-3 py-2 rounded border focus:ring-2 focus:ring-indigo-500" />
                             </div>
                         </div>
                     </div>

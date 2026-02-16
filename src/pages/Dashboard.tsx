@@ -290,7 +290,7 @@ const Dashboard = () => {
                             colorClass="bg-pink-500 text-pink-600"
                         />
                         <DailyGoal
-                            label="Revision"
+                            label="Aptitude"
                             target={1}
                             current={todayLog?.revisionHours || 0}
                             icon={RotateCcw}
