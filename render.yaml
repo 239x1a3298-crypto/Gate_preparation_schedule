@@ -1,6 +1,6 @@
 services:
   - type: static
-    name: gate-da-prep
+    name: gate-preparation-schedule
     env: static
     buildCommand: npm install && npm run build
     publishPath: ./dist
